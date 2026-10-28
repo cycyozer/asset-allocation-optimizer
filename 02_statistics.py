@@ -41,3 +41,6 @@ sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f",vmin=-1, 
 plt.title('Correlation Matrix of Monthly Returns')
 plt.savefig('figures/correlation_matrix_heatmap.png', dpi=150)  # Save the heatmap as a PNG file
 plt.show()
+
+statistics.to_csv('data/asset_statistics.csv', index=True)  # Save the statistics to a CSV file
+covariance_matrix.to_csv('data/asset_covariance.csv', index=True)  # Save the covariance matrix to a CSV file
