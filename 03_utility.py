@@ -24,3 +24,12 @@ print(utility.round(3))  # Display the utility values for the given risk aversio
 
 print(utility.idxmax())  # Display the asset with the highest utility for each risk aversion level
 print(utility[2].sort_values(ascending=False))
+
+#SPY is equity and AGG is bond, so the utility values for these two assets can be compared to see which one is more attractive for a given risk aversion level.
+#And thus see at which risk aversion level the investor would prefer to invest in equity or bond.
+
+breakeven_aversion = 2*(returns["SPY"] - returns["AGG"])/(variance["SPY"] - variance["AGG"])
+print(f"Breakeven risk aversion level: {breakeven_aversion:.2f}")
+
+#For risk aversion below 7.41, an investor would prefer to invest in equity (SPY) over bond (AGG), 
+# while for risk aversion above 7.41, the investor would prefer to invest in bond (AGG) over equity (SPY).
